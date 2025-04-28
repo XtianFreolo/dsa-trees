@@ -50,7 +50,7 @@ class Tree {
 
     dfs(this.root);
     return evenTotal;
-    
+
   }
   
 
@@ -60,7 +60,21 @@ class Tree {
    * whose value is greater than lowerBound. */
 
   numGreater(lowerBound) {
+    if (!this.root) return 0;
 
+    let numGreaterTotal = 0;
+
+    function dfs(node) {
+      if (node.val > lowerBound) {
+        numGreaterTotal += 1;
+      }
+      for (let child of node.children) {
+        dfs(child);
+      }
+    }
+
+    dfs(this.root);
+    return numGreaterTotal;
   }
 }
 
