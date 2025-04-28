@@ -15,12 +15,33 @@ class Tree {
   /** sumValues(): add up all of the values in the tree. */
 
   sumValues() {
-    
+    if (!this.root) return 0;
+
+    let total = 0;
+
+    function dfs(node) {
+      total += node.val;
+      for (let child of node.children) {
+        dfs(child);
+      }
+    }
+
+    dfs(this.root);
+    return total;
+
   }
 
   /** countEvens(): count all of the nodes in the tree with even values. */
 
   countEvens() {
+    let evenNumbers === node.val % 2;
+    let evenTotal = 0;
+    
+    function dfs(node) {
+      if (total === evenNumbers)
+            }
+    }
+
 
   }
 
