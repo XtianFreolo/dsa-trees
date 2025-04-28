@@ -33,17 +33,28 @@ class Tree {
 
   /** countEvens(): count all of the nodes in the tree with even values. */
 
+
   countEvens() {
-    let evenNumbers === node.val % 2;
-    let evenTotal = 0;
-    
+    if (!this.root) return 0;
+
+    let evenTotal = 0; 
+
     function dfs(node) {
-      if (total === evenNumbers)
-            }
+      if (node.val % 2 === 0) {
+        evenTotal += 1;
+      }
+      for (let child of node.children) {
+        dfs(child);
+      }
     }
 
-
+    dfs(this.root);
+    return evenTotal;
+    
   }
+  
+
+
 
   /** numGreater(lowerBound): return a count of the number of nodes
    * whose value is greater than lowerBound. */
